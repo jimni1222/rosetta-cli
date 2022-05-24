@@ -26,11 +26,11 @@ import (
 
 	"github.com/coinbase/rosetta-cli/pkg/results"
 
-	"github.com/coinbase/rosetta-sdk-go/parser"
-	"github.com/coinbase/rosetta-sdk-go/reconciler"
-	"github.com/coinbase/rosetta-sdk-go/statefulsyncer"
-	"github.com/coinbase/rosetta-sdk-go/types"
-	"github.com/coinbase/rosetta-sdk-go/utils"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/parser"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/reconciler"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/statefulsyncer"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/types"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/utils"
 	"github.com/fatih/color"
 )
 
@@ -118,7 +118,7 @@ func buildZapLogger(
 	config := zap.NewDevelopmentConfig()
 	config.EncoderConfig.EncodeLevel = zapcore.CapitalColorLevelEncoder
 
-	baseSlice := []zap.Field {
+	baseSlice := []zap.Field{
 		zap.String("blockchain", network.Blockchain),
 		zap.String("network", network.Network),
 		zap.String("check_type", string(checkType)),

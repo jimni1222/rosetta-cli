@@ -19,12 +19,12 @@ import (
 
 	"github.com/coinbase/rosetta-cli/configuration"
 
-	"github.com/coinbase/rosetta-sdk-go/fetcher"
-	"github.com/coinbase/rosetta-sdk-go/reconciler"
-	"github.com/coinbase/rosetta-sdk-go/storage/database"
-	"github.com/coinbase/rosetta-sdk-go/storage/modules"
-	"github.com/coinbase/rosetta-sdk-go/types"
-	"github.com/coinbase/rosetta-sdk-go/utils"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/fetcher"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/reconciler"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/storage/database"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/storage/modules"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/types"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/utils"
 )
 
 var _ reconciler.Helper = (*ReconcilerHelper)(nil)

@@ -25,11 +25,11 @@ import (
 	"strings"
 
 	customerrors "github.com/coinbase/rosetta-cli/pkg/errors"
-	"github.com/coinbase/rosetta-sdk-go/asserter"
-	"github.com/coinbase/rosetta-sdk-go/constructor/dsl"
-	"github.com/coinbase/rosetta-sdk-go/constructor/job"
-	"github.com/coinbase/rosetta-sdk-go/types"
-	"github.com/coinbase/rosetta-sdk-go/utils"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/asserter"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/constructor/dsl"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/constructor/job"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/types"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/utils"
 	"github.com/fatih/color"
 )
 

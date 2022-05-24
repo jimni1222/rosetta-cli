@@ -23,8 +23,8 @@ import (
 	"github.com/coinbase/rosetta-cli/pkg/results"
 	"github.com/coinbase/rosetta-cli/pkg/tester"
 
-	"github.com/coinbase/rosetta-sdk-go/fetcher"
-	"github.com/coinbase/rosetta-sdk-go/utils"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/fetcher"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/utils"
 	"github.com/spf13/cobra"
 	"golang.org/x/sync/errgroup"
 )
@@ -77,7 +77,7 @@ func runCheckConstructionCmd(_ *cobra.Command, _ []string) error {
 	}
 
 	fetcher := fetcher.New(
-		Config.OnlineURL,
+		[]string{Config.OnlineURL},
 		fetcherOpts...,
 	)
 

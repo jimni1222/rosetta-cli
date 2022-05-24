@@ -91,7 +91,7 @@ While working on improvements to this repository, we recommend that you use thes
 
 If you are developing on both the `rosetta-cli` and `rosetta-sdk-go` repositories, use [go.mod replace](https://golang.org/ref/mod#go-mod-file-replace) to reference local changes: 
 ```
-replace "github.com/coinbase/rosetta-sdk-go" v0.6.8 => "../rosetta-sdk-go"
+replace "github.com/klaytn/rosetta-sdk-go-klaytn" v0.6.8 => "../rosetta-sdk-go"
 ```
 ## Release
 * When we release a new rosetta-cli version, please update the [version number](https://github.com/coinbase/rosetta-cli/blob/master/cmd/root.go#L297) so that `rosetta-cli version` command can print the correct value.
@@ -124,8 +124,8 @@ _Note: MacOS users, if you face  `ulimit: setrlimit failed: invalid argument` er
 
 ## Related Projects
 
-* [`rosetta-sdk-go`](https://github.com/coinbase/rosetta-sdk-go) — The `rosetta-sdk-go` SDK provides a collection of packages used for interaction with the Rosetta API specification. Much of the SDK code is generated from this, the [`rosetta-specifications`](https://github.com/coinbase/rosetta-specifications) repository.
-* [`rosetta-specifications`](https://github.com/coinbase/rosetta-specifications) — The `rosetta-specifications` repository generates the SDK code in the [`rosetta-sdk-go`](https://github.com/coinbase/rosetta-sdk-go) repository.
+* [`rosetta-sdk-go`](https://github.com/klaytn/rosetta-sdk-go-klaytn) — The `rosetta-sdk-go` SDK provides a collection of packages used for interaction with the Rosetta API specification. Much of the SDK code is generated from this, the [`rosetta-specifications`](https://github.com/coinbase/rosetta-specifications) repository.
+* [`rosetta-specifications`](https://github.com/coinbase/rosetta-specifications) — The `rosetta-specifications` repository generates the SDK code in the [`rosetta-sdk-go`](https://github.com/klaytn/rosetta-sdk-go-klaytn) repository.
 
 ### Reference Implementations
 

@@ -21,14 +21,14 @@ import (
 
 	"github.com/coinbase/rosetta-cli/configuration"
 	"github.com/coinbase/rosetta-cli/pkg/results"
-	"github.com/coinbase/rosetta-sdk-go/fetcher"
-	"github.com/coinbase/rosetta-sdk-go/types"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/fetcher"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/types"
 )
 
 func SetupBenchmarking(config *configuration.Configuration) (*fetcher.Fetcher, func() time.Duration, chan time.Duration) {
 	// Create a new fetcher
 	fetcher := fetcher.New(
-		config.OnlineURL,
+		[]string{config.OnlineURL},
 		fetcher.WithMaxRetries(0),
 	)
 	timer := timerFactory()

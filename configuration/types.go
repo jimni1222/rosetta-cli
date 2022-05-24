@@ -15,9 +15,9 @@
 package configuration
 
 import (
-	"github.com/coinbase/rosetta-sdk-go/constructor/job"
-	"github.com/coinbase/rosetta-sdk-go/storage/modules"
-	"github.com/coinbase/rosetta-sdk-go/types"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/constructor/job"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/storage/modules"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/types"
 )
 
 // CheckDataEndCondition is a type of "successful" end
@@ -137,7 +137,7 @@ type ConstructionConfiguration struct {
 	// of a Rosetta Constructor DSL file (*.ros)
 	// that describes which Workflows to test.
 	//
-	// DSL Spec: https://github.com/coinbase/rosetta-sdk-go/tree/master/constructor/dsl
+	// DSL Spec: https://github.com/klaytn/rosetta-sdk-go-klaytn/tree/master/constructor/dsl
 	ConstructorDSLFile string `json:"constructor_dsl_file"`
 
 	// EndConditions is a map of workflow:count that
@@ -358,6 +358,9 @@ type Configuration struct {
 	// OnlineURL is the URL of a Rosetta API implementation in "online mode".
 	OnlineURL string `json:"online_url"`
 
+	// OnlineURL2 is the URL of a Rosetta API implementation in "online mode".
+	OnlineURL2 string `json:"online_url2"`
+
 	// DataDirectory is a folder used to store logs and any data used to perform validation.
 	// The path can be absolute, or it can be relative to where rosetta-cli
 	// binary is being executed.
@@ -444,9 +447,9 @@ type Configuration struct {
 	Perf         *CheckPerfConfiguration    `json:"perf"`
 }
 
-//********************//
+// ********************//
 // Check Perf configs //
-//********************//
+// ********************//
 type CheckPerfConfiguration struct {
 
 	// StartBlock is the starting block for running check:perf.

@@ -19,7 +19,7 @@ import (
 
 	"github.com/coinbase/rosetta-cli/configuration"
 
-	"github.com/coinbase/rosetta-sdk-go/utils"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/utils"
 	"github.com/spf13/cobra"
 )
 
