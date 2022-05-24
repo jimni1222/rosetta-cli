@@ -20,9 +20,9 @@ import (
 	"log"
 	"time"
 
-	"github.com/coinbase/rosetta-sdk-go/fetcher"
-	"github.com/coinbase/rosetta-sdk-go/types"
 	"github.com/fatih/color"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/fetcher"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/types"
 	"github.com/spf13/cobra"
 )
 
@@ -52,7 +52,7 @@ func runViewNetworksCmd(cmd *cobra.Command, args []string) error {
 	}
 
 	f := fetcher.New(
-		Config.OnlineURL,
+		[]string{Config.OnlineURL},
 		fetcherOpts...,
 	)
 

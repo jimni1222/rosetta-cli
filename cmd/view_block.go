@@ -20,11 +20,11 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/coinbase/rosetta-sdk-go/fetcher"
-	"github.com/coinbase/rosetta-sdk-go/parser"
-	"github.com/coinbase/rosetta-sdk-go/types"
-	"github.com/coinbase/rosetta-sdk-go/utils"
 	"github.com/fatih/color"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/fetcher"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/parser"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/types"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/utils"
 	"github.com/spf13/cobra"
 )
 
@@ -35,7 +35,7 @@ var (
 		Long: `While debugging a Data API implementation, it can be very
 useful to inspect block contents. This command allows you to fetch any
 block by index to inspect its contents. It uses the
-fetcher (https://github.com/coinbase/rosetta-sdk-go/tree/master/fetcher) package
+fetcher (https://github.com/klaytn/rosetta-sdk-go-klaytn/tree/master/fetcher) package
 to automatically get all transactions in the block and assert the format
 of the block is correct before printing.
 
@@ -85,7 +85,7 @@ func runViewBlockCmd(_ *cobra.Command, args []string) error {
 	}
 
 	newFetcher := fetcher.New(
-		Config.OnlineURL,
+		[]string{Config.OnlineURL},
 		fetcherOpts...,
 	)
 

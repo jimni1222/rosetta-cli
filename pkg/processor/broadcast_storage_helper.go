@@ -17,12 +17,12 @@ package processor
 import (
 	"context"
 	"fmt"
-	"github.com/coinbase/rosetta-sdk-go/utils"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/utils"
 
-	"github.com/coinbase/rosetta-sdk-go/fetcher"
-	"github.com/coinbase/rosetta-sdk-go/storage/database"
-	"github.com/coinbase/rosetta-sdk-go/storage/modules"
-	"github.com/coinbase/rosetta-sdk-go/types"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/fetcher"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/storage/database"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/storage/modules"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/types"
 )
 
 var _ modules.BroadcastStorageHelper = (*BroadcastStorageHelper)(nil)

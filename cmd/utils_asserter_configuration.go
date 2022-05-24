@@ -19,10 +19,10 @@ import (
 	"sort"
 	"time"
 
-	"github.com/coinbase/rosetta-sdk-go/asserter"
-	"github.com/coinbase/rosetta-sdk-go/fetcher"
-	"github.com/coinbase/rosetta-sdk-go/utils"
 	"github.com/fatih/color"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/asserter"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/fetcher"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/utils"
 	"github.com/spf13/cobra"
 )
 
@@ -31,7 +31,7 @@ var (
 		Use:   "utils:asserter-configuration",
 		Short: "Generate a static configuration file for the Asserter",
 		Long: `In production deployments, it is useful to initialize the response
-Asserter (https://github.com/coinbase/rosetta-sdk-go/tree/master/asserter) using
+Asserter (https://github.com/klaytn/rosetta-sdk-go-klaytn/tree/master/asserter) using
 a static configuration instead of initializing a configuration dynamically
 from the node. This allows a client to error on new types/statuses that may
 have been added in an update instead of silently erroring.
@@ -46,7 +46,7 @@ the configuration file should be saved (in JSON).`,
 func runCreateConfigurationCmd(cmd *cobra.Command, args []string) error {
 	// Create a new fetcher
 	newFetcher := fetcher.New(
-		Config.OnlineURL,
+		[]string{Config.OnlineURL},
 		fetcher.WithRetryElapsedTime(time.Duration(Config.RetryElapsedTime)*time.Second),
 		fetcher.WithTimeout(time.Duration(Config.HTTPTimeout)*time.Second),
 		fetcher.WithMaxRetries(Config.MaxRetries),

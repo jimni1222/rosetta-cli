@@ -21,10 +21,10 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/coinbase/rosetta-sdk-go/asserter"
-	"github.com/coinbase/rosetta-sdk-go/fetcher"
-	"github.com/coinbase/rosetta-sdk-go/types"
-	"github.com/coinbase/rosetta-sdk-go/utils"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/asserter"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/fetcher"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/types"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/utils"
 	"github.com/spf13/cobra"
 )
 
@@ -67,7 +67,7 @@ func runViewBalanceCmd(cmd *cobra.Command, args []string) error {
 	}
 
 	newFetcher := fetcher.New(
-		Config.OnlineURL,
+		[]string{Config.OnlineURL},
 		fetcherOpts...,
 	)
 

@@ -21,11 +21,11 @@ import (
 
 	"github.com/coinbase/rosetta-cli/configuration"
 
-	"github.com/coinbase/rosetta-sdk-go/constructor/coordinator"
-	"github.com/coinbase/rosetta-sdk-go/parser"
-	"github.com/coinbase/rosetta-sdk-go/storage/database"
-	"github.com/coinbase/rosetta-sdk-go/storage/modules"
-	"github.com/coinbase/rosetta-sdk-go/types"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/constructor/coordinator"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/parser"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/storage/database"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/storage/modules"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/types"
 )
 
 var _ modules.BroadcastStorageHandler = (*BroadcastStorageHandler)(nil)

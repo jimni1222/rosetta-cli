@@ -18,9 +18,9 @@ import (
 	"context"
 	"math/big"
 
-	"github.com/coinbase/rosetta-sdk-go/constructor/coordinator"
-	"github.com/coinbase/rosetta-sdk-go/storage/modules"
-	"github.com/coinbase/rosetta-sdk-go/types"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/constructor/coordinator"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/storage/modules"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/types"
 )
 
 var _ coordinator.Handler = (*CoordinatorHandler)(nil)

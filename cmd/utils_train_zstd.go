@@ -20,8 +20,8 @@ import (
 	"path"
 	"strconv"
 
-	"github.com/coinbase/rosetta-sdk-go/storage/database"
-	"github.com/coinbase/rosetta-sdk-go/storage/encoder"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/storage/database"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/storage/encoder"
 	"github.com/fatih/color"
 	"github.com/spf13/cobra"
 )

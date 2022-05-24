@@ -25,10 +25,10 @@ import (
 
 	"github.com/coinbase/rosetta-cli/configuration"
 
-	"github.com/coinbase/rosetta-sdk-go/storage/modules"
-	"github.com/coinbase/rosetta-sdk-go/types"
-	"github.com/coinbase/rosetta-sdk-go/utils"
 	"github.com/fatih/color"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/storage/modules"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/types"
+	"github.com/klaytn/rosetta-sdk-go-klaytn/utils"
 	"github.com/olekukonko/tablewriter"
 )
 
