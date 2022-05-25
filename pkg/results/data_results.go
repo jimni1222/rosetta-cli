@@ -18,10 +18,12 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"github.com/coinbase/rosetta-cli/cmd"
 	"log"
 	"math/big"
 	"os"
 	"strconv"
+	"time"
 
 	pkgError "github.com/pkg/errors"
 
@@ -114,10 +116,14 @@ type CheckDataStats struct {
 
 // Print logs CheckDataStats to the console.
 func (c *CheckDataStats) Print() {
+	endTime := time.Now()
+	duration := endTime.Sub(cmd.CheckDataStartTime)
+
 	table := tablewriter.NewWriter(os.Stdout)
 	table.SetRowLine(true)
 	table.SetRowSeparator("-")
 	table.SetHeader([]string{"check:data Stats", "Description", "Value"})
+	table.Append([]string{"Duration", "# time spent testing", duration.String()})
 	table.Append([]string{"Blocks", "# of blocks synced", strconv.FormatInt(c.Blocks, 10)})
 	table.Append([]string{"Orphans", "# of blocks orphaned", strconv.FormatInt(c.Orphans, 10)})
 	table.Append(
