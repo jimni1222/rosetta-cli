@@ -68,6 +68,8 @@ bootstrap balance config. You can look at the examples folder for an example
 of what one of these files looks like.`,
 		RunE: runCheckDataCmd,
 	}
+
+	CheckDataStartTime time.Time
 )
 
 func runCheckDataCmd(_ *cobra.Command, _ []string) error {
@@ -147,6 +149,7 @@ func runCheckDataCmd(_ *cobra.Command, _ []string) error {
 	}
 	defer dataTester.CloseDatabase(ctx)
 
+	CheckDataStartTime = time.Now()
 	g, ctx := errgroup.WithContext(ctx)
 	g.Go(func() error {
 		return dataTester.StartPeriodicLogger(ctx)

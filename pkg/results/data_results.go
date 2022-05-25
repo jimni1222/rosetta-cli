@@ -18,15 +18,18 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"github.com/coinbase/rosetta-cli/cmd"
 	"log"
 	"math/big"
 	"os"
 	"strconv"
+	"time"
 
 	pkgError "github.com/pkg/errors"
 
 	"github.com/coinbase/rosetta-cli/configuration"
 
+	"github.com/fatih/color"
 	"github.com/klaytn/rosetta-sdk-go-klaytn/asserter"
 	"github.com/klaytn/rosetta-sdk-go-klaytn/fetcher"
 	"github.com/klaytn/rosetta-sdk-go-klaytn/reconciler"
@@ -35,7 +38,6 @@ import (
 	"github.com/klaytn/rosetta-sdk-go-klaytn/syncer"
 	"github.com/klaytn/rosetta-sdk-go-klaytn/types"
 	"github.com/klaytn/rosetta-sdk-go-klaytn/utils"
-	"github.com/fatih/color"
 	"github.com/olekukonko/tablewriter"
 )
 
@@ -114,10 +116,14 @@ type CheckDataStats struct {
 
 // Print logs CheckDataStats to the console.
 func (c *CheckDataStats) Print() {
+	endTime := time.Now()
+	duration := endTime.Sub(cmd.CheckDataStartTime)
+
 	table := tablewriter.NewWriter(os.Stdout)
 	table.SetRowLine(true)
 	table.SetRowSeparator("-")
 	table.SetHeader([]string{"check:data Stats", "Description", "Value"})
+	table.Append([]string{"Duration", "# time spent testing", duration.String()})
 	table.Append([]string{"Blocks", "# of blocks synced", strconv.FormatInt(c.Blocks, 10)})
 	table.Append([]string{"Orphans", "# of blocks orphaned", strconv.FormatInt(c.Orphans, 10)})
 	table.Append(
