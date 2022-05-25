@@ -18,7 +18,6 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"github.com/coinbase/rosetta-cli/cmd"
 	"log"
 	"math/big"
 	"os"
@@ -42,8 +41,9 @@ import (
 )
 
 var (
-	f  = false
-	tr = true
+	f                  = false
+	tr                 = true
+	CheckDataStartTime time.Time
 )
 
 // EndCondition contains the type of
@@ -117,7 +117,7 @@ type CheckDataStats struct {
 // Print logs CheckDataStats to the console.
 func (c *CheckDataStats) Print() {
 	endTime := time.Now()
-	duration := endTime.Sub(cmd.CheckDataStartTime)
+	duration := endTime.Sub(CheckDataStartTime)
 
 	table := tablewriter.NewWriter(os.Stdout)
 	table.SetRowLine(true)
